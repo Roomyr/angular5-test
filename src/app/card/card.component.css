@@ -1,0 +1,46 @@
+.stars{
+    display: inline;
+    color: orange;
+}
+
+@media (min-width: 993px) {
+    .bulbIcon{
+        background-color: #0f8fa1;
+        padding: 20px;
+        width: 4rem;
+        margin-top: -30%;
+        margin-left: -1%;
+    }
+    .summary{
+        margin-top: -10rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .bulbIcon{
+        background-color: #0f8fa1;
+        padding: 15px;
+        width: 3.5rem;
+        margin-top: -45%;
+        margin-left: -1%;
+    }
+    .summary {
+      margin-top: -5rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .bulbIcon{
+        background-color: #0f8fa1;
+        padding: 15px;
+        width: 3.3rem;
+        margin-top: -85%;
+        margin-left: -1%;
+    }
+    .note{
+        margin-left: 1rem;
+    }
+    .moveCenter{
+        text-align: center;
+    }
+  }
