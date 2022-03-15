@@ -1,12 +1,14 @@
 <br>
 <div class="container">
   <ul class="list-group">
-    <li class="list-group-item">
+    <li class="list-group-item" *ngFor="let card of cards">
       <div class="row">
         <div class="col-1">
-          <div class="bulbIcon">
-            <span class="material-icons">lightbulb</span>
-          </div>
+          <a routerLink="/post">
+            <div class="bulbIcon">
+              <span class="material-icons">lightbulb</span>
+            </div>
+          </a>
         </div>
         <div class="col-1">
           <div class="note">
@@ -20,11 +22,11 @@
       <div class="row justify-content-between">
         <div class="col-xs-12 col-sm-12 col-md-4">
           <img
-            src="https://joinsessions.com/wp-content/uploads/2021/11/how-to-fix-image-upload-issue-in-wordpress-step-by-step_618a4c8570293.png"
+            [src]="card.imgUrl"
             class="img-thumbnail" alt="no img">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 moveCenter">
-          Subida por <b>Usuario anónimo</b>
+          Subida por <b>{{card.postedBy}}</b>
           <div class="stars">
             <span class="material-icons">
               star_outline
@@ -52,7 +54,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-4 summary">
-          <b>Image summary</b>
+          <b>{{card.summary}}</b>
         </div>
       </div>
       <br>
@@ -60,14 +62,14 @@
         <div class="col-md-2">
           <b>Assigness</b>
           <br>
-          Assigness
+          {{card.assignees}}
         </div>
         <div class="col-md-2">
           <b>Workflow <span class="material-icons">
               edit
             </span></b>
           <br>
-          Path to Edit
+          <a class="active" routerLink="/post/{{card.idcard}}">post/{{card.idcard}}</a>
         </div>
         <div class="col-md-2">
           <b>Review Score</b>
@@ -77,6 +79,8 @@
         <div class="col-9"></div>
       </div>
 
+      <br>
+      <br>
     </li>
   </ul>
 </div>

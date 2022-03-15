@@ -5,18 +5,29 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { RoutingModule } from './routing/routing.module';
+import { PostCardComponent } from './post-card/post-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RestService } from './rest.service';
+import { PostCardDetailComponent } from './post-card-detail/post-card-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    PostCardComponent,
+    PostCardDetailComponent
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    RestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

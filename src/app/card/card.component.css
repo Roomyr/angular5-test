@@ -10,6 +10,7 @@
         width: 4rem;
         margin-top: -30%;
         margin-left: -1%;
+        cursor: pointer;
     }
     .summary{
         margin-top: -10rem;
@@ -23,6 +24,7 @@
         width: 3.5rem;
         margin-top: -45%;
         margin-left: -1%;
+        cursor: pointer;
     }
     .summary {
       margin-top: -5rem;
@@ -36,9 +38,27 @@
         width: 3.3rem;
         margin-top: -85%;
         margin-left: -1%;
+        cursor: pointer;
     }
     .note{
         margin-left: 1rem;
+    }
+    .moveCenter{
+        text-align: center;
+    }
+  }
+
+  @media (max-width: 490px) {
+    .bulbIcon{
+        background-color: #0f8fa1;
+        padding: 10px;
+        width: 2.8rem;
+        margin-top: -200%;
+        margin-left: -1%;
+        cursor: pointer;
+    }
+    .note{
+        margin-left: 2rem;
     }
     .moveCenter{
         text-align: center;
