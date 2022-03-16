@@ -3,6 +3,11 @@
     color: orange;
 }
 
+.search-results {
+    height: 25rem;
+    overflow: scroll;
+}
+
 @media (min-width: 993px) {
     .bulbIcon{
         background-color: #0f8fa1;

@@ -16,19 +16,9 @@ export class PostCardComponent implements OnInit {
     rate: 0,
     postedBy: ''
   };
-  constructor(private route: ActivatedRoute, private rest: RestService, private router: Router) { }
+  constructor(private rest: RestService, private router: Router) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((paramMap: any) => {
-      const { params } = paramMap;
-      this.getCard(params.id);
-    });
-  }
-
-  getCard(id: any) {
-    this.rest.getOneCard(id).subscribe(res => {
-      console.log('getting one card', res);
-    });
   }
 
   addCard() {

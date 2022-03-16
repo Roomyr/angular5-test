@@ -10,6 +10,7 @@ import { RestService } from '../rest.service';
 export class PostCardDetailComponent implements OnInit {
 
   card: any = {
+    id: '',
     imgUrl: '',
     summary: '',
     assignees: '',
@@ -27,14 +28,19 @@ export class PostCardDetailComponent implements OnInit {
 
   getCard(id: any) {
     this.rest.getOneCard(id).subscribe(res => {
-      console.log('getting one card', res);
+      this.card = res[0];
+      this.card.rate = this.card.rate + '';
     });
   }
 
-  addCard() {
+  updateCard() {
     this.card.rate = +this.card.rate;
-    console.log(this.card);
-    //this.rest.postCard(this.card).subscribe();
+    this.rest.updateCard(this.card.id, this.card).subscribe();
+    this.router.navigate(['']);
+  }
+
+  deleteCard() {
+    this.rest.deleteCard(this.card.id).subscribe();
     this.router.navigate(['']);
   }
 

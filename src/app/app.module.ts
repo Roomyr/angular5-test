@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RestService } from './rest.service';
 import { PostCardDetailComponent } from './post-card-detail/post-card-detail.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PostCardDetailComponent } from './post-card-detail/post-card-detail.com
     BrowserModule,
     RoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    InfiniteScrollModule
   ],
   providers: [
     RestService

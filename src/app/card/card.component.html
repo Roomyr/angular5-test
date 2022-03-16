@@ -1,6 +1,7 @@
 <br>
 <div class="container">
-  <ul class="list-group">
+  <ul class="list-group search-results" infiniteScroll [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="100" (scrolled)="onScroll()" [scrollWindow]="false">
     <li class="list-group-item" *ngFor="let card of cards">
       <div class="row">
         <div class="col-1">
@@ -21,9 +22,14 @@
       <br>
       <div class="row justify-content-between">
         <div class="col-xs-12 col-sm-12 col-md-4">
-          <img
-            [src]="card.imgUrl"
-            class="img-thumbnail" alt="no img">
+          <div *ngIf="card.imgUrl.length > 50; else noImage">
+            <img [src]="card.imgUrl" class="img-thumbnail" alt="image">
+          </div>
+          <ng-template #noImage>
+            <img
+              src="https://thumbs.dreamstime.com/b/upset-magnifying-glass-cute-not-found-symbol-unsuccessful-s-upset-magnifying-glass-cute-not-found-symbol-unsuccessful-122205900.jpg"
+              class="img-thumbnail" alt="no img">
+          </ng-template>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 moveCenter">
           Subida por <b>{{card.postedBy}}</b>

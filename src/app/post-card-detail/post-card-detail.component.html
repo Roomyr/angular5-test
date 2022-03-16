@@ -1,1 +1,68 @@
-<p>detail works</p>
+<br>
+<form class="container">
+    <h4>Post {{card.id}}</h4>
+    <div class="form-group">
+        <label for="imageUrlInput">Image url</label>
+        <input [(ngModel)]="card.imgUrl" type="text" class="form-control" id="imageUrlInput"
+            placeholder="Enter the image url http://image.example.jpg" name="imgUrl">
+    </div>
+    <div class="form-group">
+        <label for="assigneesInput">Assignees</label>
+        <input [(ngModel)]="card.assignees" type="text" class="form-control" id="assigneesInput"
+            placeholder="Enter the assignees" name="assignees">
+    </div>
+    <div class="form-group">
+        <label for="postedByInput">Posted by</label>
+        <input [(ngModel)]="card.postedBy" type="text" class="form-control" id="postedByInput"
+            placeholder="Enter the name of who publishes this" name="postedBy">
+    </div>
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Rate</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input [(ngModel)]="card.rate" class="form-check-input" type="radio" name="rate" id="rate1"
+                        value="1">
+                    <label class="form-check-label" for="rate1">
+                        1 star
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input [(ngModel)]="card.rate" class="form-check-input" type="radio" name="rate" id="rate2"
+                        value="2">
+                    <label class="form-check-label" for="rate2">
+                        2 stars
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input [(ngModel)]="card.rate" class="form-check-input" type="radio" name="rate" id="rate3"
+                        value="3">
+                    <label class="form-check-label" for="rate3">
+                        3 stars
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input [(ngModel)]="card.rate" class="form-check-input" type="radio" name="rate" id="rate4"
+                        value="4">
+                    <label class="form-check-label" for="rate4">
+                        4 stars
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input [(ngModel)]="card.rate" class="form-check-input" type="radio" name="rate" id="rate5"
+                        value="5">
+                    <label class="form-check-label" for="rate5">
+                        5 stars
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <label for="summaryInput">Summary</label>
+        <textarea [(ngModel)]="card.summary" class="form-control" id="summaryInput" rows="3" name="summary"></textarea>
+    </div>
+    <br>
+    <button (click)="updateCard()" class="btn btn-warning">Update</button>
+    <button (click)="deleteCard()" class="btn btn-danger">Delete</button>
+</form>
