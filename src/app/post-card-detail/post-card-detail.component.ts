@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RestService } from '../rest.service';
 
 @Component({
@@ -9,7 +9,14 @@ import { RestService } from '../rest.service';
 })
 export class PostCardDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private rest: RestService) { }
+  card: any = {
+    imgUrl: '',
+    summary: '',
+    assignees: '',
+    rate: 0,
+    postedBy: ''
+  };
+  constructor(private route: ActivatedRoute, private rest: RestService, private router: Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap: any) => {
@@ -22,6 +29,13 @@ export class PostCardDetailComponent implements OnInit {
     this.rest.getOneCard(id).subscribe(res => {
       console.log('getting one card', res);
     });
+  }
+
+  addCard() {
+    this.card.rate = +this.card.rate;
+    console.log(this.card);
+    //this.rest.postCard(this.card).subscribe();
+    this.router.navigate(['']);
   }
 
 }
